@@ -24,32 +24,60 @@ namespace RegEx
         public MainWindow()
         {
             InitializeComponent();
+            lbListBox.ItemsSource = new[]
+            {
+                new RegexChecker(@"^a$|^aaaaaa$|^a\saa\sa$"),
+                new RegexChecker(@"^[A-Za-z]{5,}$"),
+                new RegexChecker("jhgjhgjhgjhgjh"),
+                new RegexChecker("jhgjhgjhgjhgjh"),
+                new RegexChecker("jhgjhgjhgjhgjh"),
+                new RegexChecker("jhgjhgjhgjhgjh")
+            };
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Regex r1 = new Regex(@"^a$|^aaaaaa$|^a\saa\sa$");
-            if (r1.IsMatch(TBOdin.Text))
-            {
-                MessageBox.Show("OK!");
-            }
-            else
-            {
-                MessageBox.Show("Not OK!");
-            }
+            ((sender as Button).DataContext as RegexChecker).Check();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Regex r1 = new Regex(@"^\w{5,}$");
-            if (r1.IsMatch(TBDva.Text))
-            {
-                MessageBox.Show("OK!");
-            }
-            else
-            {
-                MessageBox.Show("Not OK!");
-            }
-        }
+
+        //private void Button_Click_1(object sender, RoutedEventArgs e)
+        //{
+        //    Regex r1 = new Regex(@"^[A-Za-z]{5,}$");
+        //    if (r1.IsMatch(TBDva.Text))
+        //    {
+        //        MessageBox.Show("OK!");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Not OK!");
+        //    }
+        //}
+        ////([A-Za-z0-9]+\-*[A-Za-z0-9]+)+
+        //private void Button_Click_2(object sender, RoutedEventArgs e)
+        //{
+        //    Regex r1 = new Regex(@"^[A-Za-z\d][A-Za-z\d\-]*[A-Za-z\d]@[A-Za-z]{2,}\.[A-Za-z]{2,}$");
+        //    if (r1.IsMatch(TBTri.Text))
+        //    {
+        //        MessageBox.Show("OK!");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Not OK!");
+        //    }
+        //}
+
+        //private void Button_Click_3(object sender, RoutedEventArgs e)
+        //{
+        //    Regex r1 = new Regex(@"^[А-Яа-яё][А-Яа-яё\-]*[А-Яа-яё]$");
+        //    if (r1.IsMatch(TBTri.Text))
+        //    {
+        //        MessageBox.Show("OK!");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Not OK!");
+        //    }
+        //}
     }
 }
