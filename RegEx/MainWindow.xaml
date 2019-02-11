@@ -23,7 +23,7 @@
                 <DockPanel>
                     <TextBlock Text="{Binding Pattern}" Width="400"/>
                     <Button Content="Проверить" DockPanel.Dock="Right" Click="Button_Click"/> 
-                    <TextBox Text="{Binding Str}"/>
+                    <TextBox Text="{Binding Str}" TextWrapping="Wrap"/>
                 </DockPanel>                   
 
             </DataTemplate>

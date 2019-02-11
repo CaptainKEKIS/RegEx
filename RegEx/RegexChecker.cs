@@ -42,6 +42,7 @@ namespace RegEx
             Match Mtch = r1.Match(Str);
             if (Mtch.Success)
             {
+                  
                 MessageBox.Show($"Город: {Mtch.Groups[1]}{Environment.NewLine}Широта: {Mtch.Groups[4]}{Environment.NewLine}Долгота: {Mtch.Groups[7]}");
             }
             else
@@ -50,5 +51,21 @@ namespace RegEx
             }
         }
     }
+    class Zadanie5Checker : RegexChecker
+    {
+        public Zadanie5Checker(string Pattern) : base(Pattern)
+        {
+        }
+        public override void Check()
+        {
+            List<string> List = new List<string>();
+            Regex r1 = new Regex(Pattern);
+            Match Mtch = r1.Match(Str);
+            while (Mtch.Success)
+            {
+                List.Add(Mtch.Value);
+                Mtch = Mtch.NextMatch();
+            }
+        }
+    }
 }
-//1 4 6 
