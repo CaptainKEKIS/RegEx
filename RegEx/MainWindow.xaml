@@ -6,7 +6,30 @@
         xmlns:local="clr-namespace:RegEx"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <DockPanel>
+            <Button Content="Проверить" DockPanel.Dock="Right" Click="Button_Click"/>
+            <TextBox x:Name="TBOdin"/>
+        </DockPanel>
+        <DockPanel>
+            <Button Content="Проверить" DockPanel.Dock="Right" Click="Button_Click_1"/>
+            <TextBox x:Name="TBDva"/>
+        </DockPanel>
+        <DockPanel>
+            <Button Content="Проверить" DockPanel.Dock="Right"/>
+            <TextBox />
+        </DockPanel>
+        <DockPanel>
+            <Button Content="Проверить" DockPanel.Dock="Right"/>
+            <TextBox />
+        </DockPanel>
+        <DockPanel>
+            <Button Content="Проверить" DockPanel.Dock="Right"/>
+            <TextBox />
+        </DockPanel>
+        <DockPanel>
+            <Button Content="Проверить" DockPanel.Dock="Right"/>
+            <TextBox />
+        </DockPanel>
+    </StackPanel>
 </Window>
