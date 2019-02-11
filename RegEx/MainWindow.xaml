@@ -5,12 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegEx"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <ItemsControl x:Name="lbListBox">
+        Title="MainWindow" Height="350" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+    </Window.Resources>
+        <ItemsControl x:Name="lbListBox">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
                 <DockPanel>
-                    <TextBlock Text="{Binding Pattern}"/>
+                    <TextBlock Text="{Binding Pattern}" Width="400"/>
                     <Button Content="Проверить" DockPanel.Dock="Right" Click="Button_Click"/> 
                     <TextBox Text="{Binding Str}"/>
                 </DockPanel>                   
