@@ -29,7 +29,7 @@ namespace RegEx
                 new RegexChecker(@"^a$|^aaaaaa$|^a\saa\sa$"),
                 new RegexChecker(@"^[A-Za-z]{5,}$"),
                 new RegexChecker(@"^[A-Za-z\d][A-Za-z\d\-]*[A-Za-z\d]@[A-Za-z]{2,}\.[A-Za-z]{2,}$"),
-                new RegexChecker(@"^[А-Яа-яё][А-Яа-яё\-]*[А-Яа-яё]$"),
+                new Zadnie3Checker(@"^([А-ЯЁ][а-яё]+(\-[А-ЯЁ][а-яё]+)?):(\sширота)?\s(\d{1,3}(\,\d{4})?)\,(\sдолгота)?\s(\d{1,3}(\,\d{4})?)$"),
                 new RegexChecker("jhgjhgjhgjhgjh"),
                 new RegexChecker("jhgjhgjhgjhgjh")
             };
