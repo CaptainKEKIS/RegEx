@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -58,14 +59,30 @@ namespace RegEx
         }
         public override void Check()
         {
-            List<string> List = new List<string>();
+            string Line;
             Regex r1 = new Regex(Pattern);
-            Match Mtch = r1.Match(Str);
+            Match Mtch;
+            FileStream InputFile = new FileStream("..\\..\\..\\domens.txt", FileMode.Open);
+            FileStream OutputFile = new FileStream("..\\..\\..\\OutputDomens.txt", FileMode.OpenOrCreate);
+            StreamReader Reader = new StreamReader(InputFile);
+            StreamWriter Writer = new StreamWriter(OutputFile);
+            /*while ((Line = Reader.ReadLine()) != null)
+            {
+                Mtch = r1.Match(Line);
+                if (Mtch.Success)
+                {
+                    Writer.WriteLine($"Смещение от начала файла: {Reader.BaseStream.Position} | Строка: {Mtch.Value}");
+                }
+            }*/
+            Mtch = r1.Match(Reader.ReadToEnd());
             while (Mtch.Success)
             {
-                List.Add(Mtch.Value);
+                Writer.WriteLine($"Смещение от начала файла: {Reader.BaseStream.Position} | Строка: {Mtch.Value}");
                 Mtch = Mtch.NextMatch();
             }
+
+            Reader.Close();
+            Writer.Close();
         }
     }
 }

@@ -30,7 +30,8 @@ namespace RegEx
                 new RegexChecker(@"^[A-Za-z]{5,}$"),
                 new RegexChecker(@"^[A-Za-z\d][A-Za-z\d\-]*[A-Za-z\d]@[A-Za-z]{2,}\.[A-Za-z]{2,}$"),
                 new Zadnie3Checker(@"^([А-ЯЁ][а-яё]+(\-[А-ЯЁ][а-яё]+)?):(\sширота)?\s(\d{1,3}(\,\d{4})?)\,(\sдолгота)?\s(\d{1,3}(\,\d{4})?)$"),
-                new Zadanie5Checker(@"^(http://|https://|ftp://)?(www\.)?[A-Za-z\d][A-Za-z\d\-_]*[A-Za-z\d]\.[A-Za-z\d][A-Za-z\d\-_]*[A-Za-z\d](\.[A-Za-z\d][A-Za-z\d\-_]*[A-Za-z\d]){0,3}$")
+                new Zadanie5Checker(@"(http://|https://|ftp://)?(www\.)?[A-Za-z\d][A-Za-z\d\-_]*[A-Za-z\d](\.[A-Za-z\d][A-Za-z\d\-_]*[A-Za-z\d]){1,4}")
+                //new RegexChecker(@"^(http://|https://|ftp://)?(www\.)?[A-Za-z\d][A-Za-z\d\-_]*[A-Za-z\d](\.[A-Za-z\d][A-Za-z\d\-_]*[A-Za-z\d]){1,4}$")
             };
         }
 
