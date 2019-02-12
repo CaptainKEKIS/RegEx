@@ -77,7 +77,7 @@ namespace RegEx
             Mtch = r1.Match(Reader.ReadToEnd());
             while (Mtch.Success)
             {
-                Writer.WriteLine($"Смещение от начала файла: {Reader.BaseStream.Position} | Строка: {Mtch.Value}");
+                Writer.WriteLine($"Смещение от начала файла: {Mtch.Index} | Строка: {Mtch.Value}");
                 Mtch = Mtch.NextMatch();
             }
 
